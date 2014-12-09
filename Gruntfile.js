@@ -13,11 +13,11 @@ module.exports = function(grunt) {
 
 		concat: {
 			dev: {
-				src: ['node_modules/jquery/dist/jquery.min.js', 'src/js/*.js'], 
+				src: ['node_modules/jquery/dist/jquery.min.js', 'node_modules/jquery-ui/jquery-ui.js', 'src/js/*.js'], 
 				dest: 'js/main.js'
 			},
 			options: {
-				'banner': '/*! <%= pkg.name %> - v<%= pkg.version %> - <%= grunt.template.today("yyyy-mm-dd") %> */',
+				'banner': '/*! <%= pkg.name %> - v<%= pkg.version %> - DEV VERSION - <%= grunt.template.today("yyyy-mm-dd") %> */',
 				'sourceMap': true
 			},
 		},
@@ -26,10 +26,10 @@ module.exports = function(grunt) {
 			dev: {
 				options: {
 					'sourceMap': true,
-					'banner': '/*! <%= pkg.name %> - v<%= pkg.version %> - <%= grunt.template.today("yyyy-mm-dd") %> */'
+					'banner': '/*! <%= pkg.name %> - v<%= pkg.version %> - DEV VERSION - <%= grunt.template.today("yyyy-mm-dd") %> */'
 				},
 				files: {
-					'css/main.css': ['src/less/import.less', 'src/less/var.less', 'src/less/structure.less', 'src/less/type.less', 'src/less/sections.less']
+					'css/main.css': ['src/less/import.less']
 				}
 			},
 			prod: {
@@ -38,7 +38,7 @@ module.exports = function(grunt) {
 					'cleancss': true
 				},
 				files: {
-					'css/main.min.css': ['src/less/import.less', 'src/less/var.less', 'src/less/structure.less', 'src/less/type.less', 'src/less/sections.less']
+					'css/main.min.css': ['src/less/import.less']
 				}
 			}
 		},
@@ -66,7 +66,7 @@ module.exports = function(grunt) {
 			},
 			less: {
 				files: ['src/less/*.less'],
-				tasks: ['lesslint', 'less:dev']
+				tasks: ['less:dev']
 			}
 		}
 	});

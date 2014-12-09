@@ -1,0 +1,24 @@
+.shadow(@h, @v, @b, @s, @color, @fade){
+    box-shadow: @h @v  @b @s fade(@color, @fade);
+}
+
+.gradient(@color) {
+    /* fallback */
+    background-color: @color;
+    background-repeat: repeat-x;
+
+    /* Safari 4-5, Chrome 1-9 */
+    background: -webkit-gradient(linear, 0% 0%, 0% 100%, from(@color), to(lighten(@color, 7%)));
+
+    /* Safari 5.1, Chrome 10+ */
+    background: -webkit-linear-gradient(top, lighten(@color, 7%), @color);
+
+    /* Firefox 3.6+ */
+    background: -moz-linear-gradient(top, lighten(@color, 7%), @color);
+
+    /* IE 10 */
+    background: -ms-linear-gradient(top, lighten(@color, 7%), @color);
+
+    /* Opera 11.10+ */
+    background: -o-linear-gradient(top, lighten(@color, 7%), @color);
+}

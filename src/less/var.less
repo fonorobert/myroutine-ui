@@ -1,13 +1,21 @@
 /*Base colors */
 
-@color-1-base: #000000;
-@color-2-base: #000000;
+@color-1-base: @grey-1-base;
+@color-2-base: lighten(@color-1-base, 15%);
+@color-3-base: lighten(@color-2-base, 20%);
+
+@grey-1-base: hsla(0,0%,20%,1);
+@grey-2-base: hsla(0,0%,40%,1);
+@grey-3-base: hsla(0,0%,60%,1);
 
 /*Base font-size and weight */
-@font-base: 16px;
+@font-base: 20px;
 @font-weight-base: 400;
 
 /*Base padding and margin */
-@padding-base: 6px;
-@margin-base: 6px;
+@padding-base: 12px;
+@margin-base: 10px;
+
+@font-color-1: @grey-1-base;
+@font-color-2: @grey-3-base;
 
